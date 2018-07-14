@@ -19,7 +19,7 @@ public class Consumer {
 			ConnectionFactory faction = new ActiveMQConnectionFactory();
 			connection = faction.createConnection();
 			connection.start();
-			Session session = connection.createSession(Boolean.FALSE, Session.AUTO_ACKNOWLEDGE);
+			Session session = connection.createSession(Boolean.FALSE, Session.CLIENT_ACKNOWLEDGE);
 			Destination destination = session.createQueue("queue");
 			MessageConsumer consumer = session.createConsumer(destination);
 //			TextMessage message = (TextMessage) consumer.receive(); 
