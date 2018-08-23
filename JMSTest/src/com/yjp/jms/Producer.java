@@ -9,8 +9,8 @@ import javax.jms.MessageProducer;
 import javax.jms.Session;
 import javax.jms.TextMessage;
 
+import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.activemq.command.ActiveMQTextMessage;
-import org.apache.activemq.spring.ActiveMQConnectionFactory;
 
 
 public class Producer {
@@ -19,6 +19,7 @@ public class Producer {
 		// TODO Auto-generated method stub
 		Connection connection = null ;
 		try{
+//			ConnectionFactory faction=new ActiveMQConnectionFactory("tcp://localhost:61616");
 			ConnectionFactory faction = new ActiveMQConnectionFactory();
 			connection = faction.createConnection();
 			connection.start();
