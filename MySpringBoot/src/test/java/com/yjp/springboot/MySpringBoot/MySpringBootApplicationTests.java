@@ -45,10 +45,10 @@ public class MySpringBootApplicationTests {
 //			userService.save(user1);
 			
 			User user=userService.findById(1);
-			System.out.println(user.getId()+"  "+user.getName());
+			System.out.println(user.getId()+"  "+user.getName()+"  "+user.getCreateDate());
 			
-			mvc.perform(MockMvcRequestBuilders.get("/test")).andExpect(MockMvcResultMatchers.status().isOk())
-			.andDo(MockMvcResultHandlers.print());
+//			mvc.perform(MockMvcRequestBuilders.get("/test")).andExpect(MockMvcResultMatchers.status().isOk())
+//			.andDo(MockMvcResultHandlers.print());
 			
 //			User user = new User();
 //			ObjectMapper mapper =  new ObjectMapper();

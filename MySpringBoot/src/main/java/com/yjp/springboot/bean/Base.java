@@ -1,6 +1,7 @@
 package com.yjp.springboot.bean;
 
-import javax.persistence.Column;
+import java.sql.Timestamp;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,8 +13,9 @@ public abstract class Base {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	@Column(name = "name")
-	private String name;
+	
+	private Timestamp createDate;
+	private Timestamp updateDate;
 	
 	public int getId() {
 		return id;
@@ -22,12 +24,21 @@ public abstract class Base {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
-	public String getName() {
-		return name;
+
+	public Timestamp getCreateDate() {
+		return createDate;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setCreateDate(Timestamp createDate) {
+		this.createDate = createDate;
 	}
+
+	public Timestamp getUpdateDate() {
+		return updateDate;
+	}
+
+	public void setUpdateDate(Timestamp updateDate) {
+		this.updateDate = updateDate;
+	}
+
 }
